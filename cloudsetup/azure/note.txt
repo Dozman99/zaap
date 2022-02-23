@@ -1,0 +1,1 @@
+To enable system-assigned managed identity on a VM, your account needs the Virtual Machine Contributor role assignment. No other Azure AD directory role assignments are required.
