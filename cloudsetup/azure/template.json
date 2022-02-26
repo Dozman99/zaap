@@ -38,7 +38,7 @@
     },
     "dnsLabelPrefix": {
       "type": "string",
-      "defaultValue": "[toLower(format('simplelinuxvm-{0}', uniqueString(resourceGroup().id)))]",
+      "defaultValue": "[toLower(format('zaapLinuxVM-{0}', uniqueString(resourceGroup().id)))]",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
@@ -166,6 +166,15 @@
       }
     },
     {
+      "apiVersion": "2018-06-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[variables('vmName')]",
+      "location": "[resourceGroup().location]",
+      "identity": {
+        "type": "SystemAssigned"
+      }
+    },
+    {
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "2020-06-01",
       "name": "[parameters('virtualNetworkName')]",
@@ -208,6 +217,9 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines",
+      "identity": {
+        "type": "SystemAssigned"
+      },
       "apiVersion": "2020-06-01",
       "name": "[parameters('vmName')]",
       "location": "[parameters('location')]",

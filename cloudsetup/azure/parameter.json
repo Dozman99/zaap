@@ -6,7 +6,7 @@
       "value": "zaapLinuxVM"
     },
     "adminUsername": {
-      "value": "dozman"
+      "value": "zaapuser"
     },
     "authenticationType": {
       "value": "sshPublicKey"
@@ -33,7 +33,7 @@
       "value": "zaapSubnet"
     },
     "networkSecurityGroupName": {
-      "value": "zaapSecGroupNet"
+      "value": "zaapNSG"
     }
   }
 }
